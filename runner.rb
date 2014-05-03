@@ -1,7 +1,9 @@
-load 'maps_factory.rb'
-load 'num_builder.rb'
-load 'parser.rb'
+load 'lib/parser.rb'
+load 'lib/num_builder.rb'
 
-# pr = Parser.new "us1.txt"
-pr = Parser.new "us2.txt"
-pr.go
+source_path = ARGV[0] || raise("Missing source file")
+target_path = ARGV[1] || raise("Missing target file")
+
+parser = Parser.new source_path
+parser.parse
+parser.result_to_file target_path
