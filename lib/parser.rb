@@ -1,5 +1,4 @@
 require 'num_builder'
-
 class Parser
 	LinesPerNumber = 4
 
